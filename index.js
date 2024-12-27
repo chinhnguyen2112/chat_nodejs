@@ -13,8 +13,8 @@ io.on("connection", function (socket) {
   socket.on("new_message", function (data) {
     io.sockets.emit("new_message", {
       message: data.message,
-      sender_message_id: data.sender_message_id,
-      receiver_message_id: data.receiver_message_id,
+      user_send_id: data.user_send_id,
+      user_receive_id: data.user_receive_id,
     });
   });
   socket.on("all_user", (data) => {
